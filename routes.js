@@ -1,10 +1,16 @@
 module.exports = function(app, db) {
 
     let Book = require('./models/book');
+    let Movie = require('./models/movie');
     // BOOKS API
     // GET ALL BOOKS
     app.route('/api/books').get((req,res) => {
-        let data = Book.getAllBooks(function(data){
+        let data = Book.getAll(function(data){
+            res.send(data);
+        });
+    });
+    app.route('/api/movies').get((req,res) => {
+        let data = Movie.getAll(function(data){
             res.send(data);
         });
     });
@@ -12,7 +18,13 @@ module.exports = function(app, db) {
     // GET BOOK BY ID
     app.route('/api/books/:id').get((req, res) => {
         let bookId = req.params['id'];
-        let data = Book.getBookById(bookId, function(data) {
+        let data = Book.get(bookId, function(data) {
+            res.send(data);
+        });
+    });
+    app.route('/api/movies/:id').get((req, res) => {
+        let movieId = req.params['id'];
+        let data = Movie.get(movieId, function(data) {
             res.send(data);
         });
     });
@@ -30,7 +42,20 @@ module.exports = function(app, db) {
             isbn_10: req.body.isbn_10,
             owner: req.body.owner 
         };
-        Book.createBook(book, function(data) {
+        Book.create(book, function(data) {
+            res.status(201).send(data);
+        });
+    });
+    app.route('/api/movies').post((req, res) => {
+        let movie = {
+            title: req.body.title,
+            director: req.body.director,
+            type: req.body.type,
+            series: req.body.series,
+            series_num: req.body.series_num,
+            owner: req.body.owner
+        }
+        Movie.create(movie, function(data) {
             res.status(201).send(data);
         });
     });
@@ -49,7 +74,7 @@ module.exports = function(app, db) {
             isbn_10: req.body.isbn_10,
             owner: req.body.owner
         }
-        Book.updateBook(id, book, function(data) {
+        Book.update(id, book, function(data) {
             res.status(200).send(data);
         });
     });
@@ -57,7 +82,7 @@ module.exports = function(app, db) {
     // DELETE BOOK BY ID
     app.route('/api/books/:id').delete((req, res) => {
         const id = req.params['id'];
-        Book.deleteBook(id, function(data) {
+        Book.delete(id, function(data) {
             res.status(204).send();
         });
     });
