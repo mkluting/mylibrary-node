@@ -22,19 +22,19 @@ Movie.create = function(newMovie, cb){
     });
 }
 
-// Book.updateBook = function(id, book, cb) {
-//     sql.query('UPDATE books SET title = ?, author_first = ?, author_last = ?, binding_type = ?, series = ?, series_num = ?, owner = ?, isbn_13 = ?, isbn_10 = ? WHERE id = ?', [book.title, book.author_first, book.author_last, book.binding_type, book.series, book.series_num, book.owner, book.isbn_13, book.isbn_10, id], function(err, res) {
-//         if(err) throw err;
-//         cb(res);
-//     });
-// }
+Movie.update = function(id, book, cb) {
+    sql.query('UPDATE books SET title = ?, author_first = ?, author_last = ?, binding_type = ?, series = ?, series_num = ?, owner = ?, isbn_13 = ?, isbn_10 = ? WHERE id = ?', [book.title, book.author_first, book.author_last, book.binding_type, book.series, book.series_num, book.owner, book.isbn_13, book.isbn_10, id], function(err, res) {
+        if(err) throw err;
+        cb(res);
+    });
+}
 
-// Book.deleteBook = function(id, cb) {
-//     sql.query('DELETE FROM books WHERE id = ?', id, function(err, res) {
-//         if(err) throw err;
-//         cb(res);
-//     });
-// }
+Movie.delete = function(id, cb) {
+    sql.query('DELETE FROM books WHERE id = ?', id, function(err, res) {
+        if(err) throw err;
+        cb(res);
+    });
+}
 
 Movie.getAll = function(cb, params) {
     let query = 'SELECT * FROM movies order by director asc, series asc, series_num asc';
