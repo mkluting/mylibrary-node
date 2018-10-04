@@ -1,11 +1,11 @@
 let data = {
     tables: {
         books: [
-            {id: 1, title: 'Ex-Heroes', author_first: 'Peter', author_last: 'Clines', binding_type: 'Paperback', series: 'Ex-Heroes', series_num: 1, owner: 'Matt'},
-            {id: 2, title: 'Ex-Patriots', author_first: 'Peter', author_last: 'Clines', binding_type: 'Paperback', series: 'Ex-Heroes', series_num: 2, owner: 'Matt'},
-            {id: 3, title: 'Ex-Communication', author_first: 'Peter', author_last: 'Clines', binding_type: 'Paperback', series: 'Ex-Heroes', series_num: 3, owner: 'Matt'},
-            {id: 4, title: 'Ex-Purgatory', author_first: 'Peter', author_last: 'Clines', binding_type: 'Paperback', series: 'Ex-Heroes', series_num: 4, owner: 'Matt'},
-            {id: 5, title: 'Ex-Isle', author_first: 'Peter', author_last: 'Clines', binding_type: 'Paperback', series: 'Ex-Heroes', series_num: 5, owner: 'Matt'},
+            {id: 1, title: 'Ex-Heroes', author_first: 'Peter', author_last: 'Clines', format: 'Paperback', series: 'Ex-Heroes', series_num: 1, owner: 'Matt'},
+            {id: 2, title: 'Ex-Patriots', author_first: 'Peter', author_last: 'Clines', format: 'Paperback', series: 'Ex-Heroes', series_num: 2, owner: 'Matt'},
+            {id: 3, title: 'Ex-Communication', author_first: 'Peter', author_last: 'Clines', format: 'Paperback', series: 'Ex-Heroes', series_num: 3, owner: 'Matt'},
+            {id: 4, title: 'Ex-Purgatory', author_first: 'Peter', author_last: 'Clines', format: 'Paperback', series: 'Ex-Heroes', series_num: 4, owner: 'Matt'},
+            {id: 5, title: 'Ex-Isle', author_first: 'Peter', author_last: 'Clines', format: 'Paperback', series: 'Ex-Heroes', series_num: 5, owner: 'Matt'},
         ],
     },
 }

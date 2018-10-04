@@ -23,7 +23,7 @@ Movie.create = function(newMovie, cb){
 }
 
 Movie.update = function(id, book, cb) {
-    sql.query('UPDATE books SET title = ?, author_first = ?, author_last = ?, binding_type = ?, series = ?, series_num = ?, owner = ?, isbn_13 = ?, isbn_10 = ? WHERE id = ?', [book.title, book.author_first, book.author_last, book.binding_type, book.series, book.series_num, book.owner, book.isbn_13, book.isbn_10, id], function(err, res) {
+    sql.query('UPDATE books SET title = ?, author_first = ?, author_last = ?, format = ?, series = ?, series_num = ?, owner = ?, isbn_13 = ?, isbn_10 = ? WHERE id = ?', [book.title, book.author_first, book.author_last, book.format, book.series, book.series_num, book.owner, book.isbn_13, book.isbn_10, id], function(err, res) {
         if(err) throw err;
         cb(res);
     });

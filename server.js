@@ -25,8 +25,12 @@ app.use(function (err, req, res, next) {
 // Get configured routes
 require('./routes')(app);
 
+let options = {
+    customCss: '.try-out { display: none; }'
+};
+
 // Set up API DOCS with swagger
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, options));
 
 // listen on configured port
 app.listen(config.PORT, () => {
